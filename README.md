@@ -4,7 +4,7 @@ Test::HereFiles - Use "embedded" files in the form of heredocs.
 
 # VERSION
 
-version 0.0004
+version 0.0005
 
 # SYNOPSIS
 
@@ -26,27 +26,25 @@ This current implementation absolutely requires that code using this module:
 ## `create_filename_for($heredoc_name,$filename)`
 
 positional parameters:
-`$heredoc_name`, Name of "heredoc" chosen to be written to a temp file.
-`$filename`, String. The name of a file to which the content of the heredoc
-will be written. If not given, a temporary file will be created.
+
+- `$heredoc_name`: Name of "heredoc" chosen to be written to a temp file.
+- `$filename`: String. The name of a file to which the content of the heredoc will be
+written. If not given, a temporary file will be created.
+
 returns: Name of the filename containing the "heredoc" text.
 
 ## `delete_temp_file($filename)`
 
 positional parameter:
-    `$filename`
-        Name of a file to be deleted.
 
-This runs as a test, with a message indicating the temporary file deleted.
+- `$filename`: Name of a file to be deleted. This runs as a test, with a message indicating the temporary file deleted.
 
 ## `slurp_file($filename)`
 
 positional parameter:
-    `$filename`
-        Name of a file whose contents will be read into a string.
 
-returns:
-    String containing the entire contents of the chosen file.
+- `$filename`: Name of a file whose contents will be read into a string.
+- returns: String containing the entire contents of the chosen file.
 
 ## `create_empty_file`
 

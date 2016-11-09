@@ -80,27 +80,39 @@ This current implementation absolutely requires that code using this module:
 =head2 C<create_filename_for($heredoc_name,$filename)>
 
 positional parameters:
-C<$heredoc_name>, Name of "heredoc" chosen to be written to a temp file.
-C<$filename>, String. The name of a file to which the content of the heredoc
-will be written. If not given, a temporary file will be created.
+
+=over 1
+
+=item C<$heredoc_name>: Name of "heredoc" chosen to be written to a temp file.
+
+=item C<$filename>: String. The name of a file to which the content of the heredoc will be
+written. If not given, a temporary file will be created.
+
+=back
+
 returns: Name of the filename containing the "heredoc" text.
 
 =head2 C<delete_temp_file($filename)>
 
 positional parameter:
-    C<$filename>
-        Name of a file to be deleted.
 
-This runs as a test, with a message indicating the temporary file deleted.
+=over 1
+
+=item C<$filename>: Name of a file to be deleted. This runs as a test, with a message indicating the temporary file deleted.
+
+=back
 
 =head2 C<slurp_file($filename)>
 
 positional parameter:
-    C<$filename>
-        Name of a file whose contents will be read into a string.
 
-returns:
-    String containing the entire contents of the chosen file.
+=over 1
+
+=item C<$filename>: Name of a file whose contents will be read into a string.
+
+=item returns: String containing the entire contents of the chosen file.
+
+=back
 
 =head2 C<create_empty_file>
 
