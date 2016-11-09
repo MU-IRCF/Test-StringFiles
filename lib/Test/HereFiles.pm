@@ -76,18 +76,14 @@ This current implementation absolutely requires that code using this module:
 =head1 SUBROUTINES
 
 =head2 C<create_filename_for($heredoc_name)>
+
 =head2 C<create_filename_for($heredoc_name,$filename)>
 
 positional parameters:
-    C<$heredoc_name>
-        Name of "heredoc" chosen to be written to a temp file.
-
-    C<$filename>
-        String. The name of a file to which $content will be written. If
-        not given, a temporary file will be created.
-
-returns:
-    Name of the filename containing the "heredoc" text.
+C<$heredoc_name>, Name of "heredoc" chosen to be written to a temp file.
+C<$filename>, String. The name of a file to which the content of the heredoc
+will be written. If not given, a temporary file will be created.
+returns: Name of the filename containing the "heredoc" text.
 
 =head2 C<delete_temp_file($filename)>
 
