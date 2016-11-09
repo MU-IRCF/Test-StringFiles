@@ -10,14 +10,8 @@ use Test::More tests => 4;
 
 use lib 'lib';
 
-use Test::HereFiles qw(
-                    create_filename_for
-                    create_empty_file
-                    delete_temp_file
-                    slurp_file
-               );
-
-*Test::HereFiles::get_heredoc_for = *main::get_heredoc_for;
+use Test::StringFiles;
+*Test::StringFiles::get_string_for = *main::get_string_for;
 
 {   ## 2 tests ##
 
@@ -26,8 +20,8 @@ use Test::HereFiles qw(
     #   (2) "slurp_file"
     my $out_filename = create_filename_for('animals');
     my $result       = slurp_file $out_filename;
-    my $expected     = get_heredoc_for('animals');
-    is($result, $expected, '"create_filename_for" and "slurp_file" worked');
+    my $expected     = get_string_for('animals');
+    is($result, $expected, '"slurp_file" and one-arg form of "create_filename_for" work');
 
     # Test delete temp file (it is a test itself), and clean up
     delete_temp_file($out_filename);
@@ -46,7 +40,7 @@ use Test::HereFiles qw(
     create_filename_for('plants', $random_filename);
     my $result   = slurp_file $random_filename; 
     my $expected = "Arabidopsis\nBrassica\n";
-    is($result, $expected, 'void-context/two-arg from of "create_filename_for__named" works');
+    is($result, $expected, 'two-arg form "create_filename_for" works');
 
     unlink $random_filename;
 }
@@ -54,11 +48,11 @@ use Test::HereFiles qw(
 done_testing;
 
 # HEREDOCS DEFINED HERE ==================================
-sub get_heredoc_for {
+sub get_string_for {
     my $section = shift;
     
 # START Heredocs ------------------------------------------
-my %heredoc_for = (
+my %string_for = (
 
     plants => <<'END',
 Arabidopsis
@@ -73,5 +67,5 @@ END
 );
 # END Heredocs --------------------------------------------
 
-    return %heredoc_for{$section};
+    return %string_for{$section};
 }
