@@ -4,58 +4,59 @@ Test::HereFiles - Use "embedded" files in the form of heredocs.
 
 # VERSION
 
-version 0.0001
+version 0.0002
 
 # SYNOPSIS
 
 # DESCRIPTION
 
-    Use "embedded" files in the form of heredocs.
+Use "embedded" files in the form of heredocs.
 
-    This current implementation absolutely requires that code using this module:
+This current implementation absolutely requires that code using this module:
 
-    1. Have a subroutine named C<get_heredoc_for>
-    2. Include the line:
+1\. Have a subroutine named `get_heredoc_for`
+2\. Include the line:
 
-        *Test::HereFiles::get_heredoc_for = *main::get_heredoc_for;
+    *Test::HereFiles::get_heredoc_for = *main::get_heredoc_for;
 
 # SUBROUTINES
 
 ## create\_filename\_for
 
-    positional parameters:
-        $heredoc_name
-            Name of "heredoc" chosen to be written to a temp file.
+positional parameters:
+    $heredoc\_name
+        Name of "heredoc" chosen to be written to a temp file.
 
-        $filename (optional)
-            String. The name of a file to which $content will be written. If
-            not given, a temporary file will be created.
+    $filename (optional)
+        String. The name of a file to which $content will be written. If
+        not given, a temporary file will be created.
 
-    returns:
-        Name of the filename containing the "heredoc" text.
+returns:
+    Name of the filename containing the "heredoc" text.
 
 ## delete\_temp\_file($filename)
 
-    positional parameter:
-        $filename
-            Name of a file to be deleted.
+positional parameter:
+    $filename
+        Name of a file to be deleted.
 
-    This runs as a test, with a message indicating the temporary file deleted.
+This runs as a test, with a message indicating the temporary file deleted.
 
 ## slurp\_file($filename)
-    positional parameter:
-        $filename
-            Name of a file whose contents will be read into a string.
 
-    returns:
-        String containing the entire contents of the chosen file.
+positional parameter:
+    $filename
+        Name of a file whose contents will be read into a string.
+
+returns:
+    String containing the entire contents of the chosen file.
 
 ## create\_empty\_file
 
-    returns:
-        Name for an empty file that has just been created with a random
-        "temporary" filename (it's not really temporary because you have to
-        delete it yourself). 
+returns:
+    Name for an empty file that has just been created with a random
+    "temporary" filename (it's not really temporary because you have to
+    delete it yourself). 
 
 # RATIONALE
 
