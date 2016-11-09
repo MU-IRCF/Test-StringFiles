@@ -1,6 +1,7 @@
 use strict;   # Must declare all variables before using them
 package Test::HereFiles;
 #ABSTRACT:  Use "embedded" files in the form of heredocs.
+
 use warnings; # Emit helpful warnings
 use v5.10;    # Require at least Perl version 5.10, thus enabling "//" and "say"
 use autodie;  # Fatal exceptions for common unrecoverable errors (e.g. open on nonexistent file)
@@ -74,37 +75,38 @@ This current implementation absolutely requires that code using this module:
 
 =head1 SUBROUTINES
 
-=head2 create_filename_for
+=head2 C<create_filename_for($heredoc_name)>
+=head2 C<create_filename_for($heredoc_name,$filename)>
 
 positional parameters:
-    $heredoc_name
+    C<$heredoc_name>
         Name of "heredoc" chosen to be written to a temp file.
 
-    $filename (optional)
+    C<$filename>
         String. The name of a file to which $content will be written. If
         not given, a temporary file will be created.
 
 returns:
     Name of the filename containing the "heredoc" text.
 
-=head2 delete_temp_file($filename)
+=head2 C<delete_temp_file($filename)>
 
 positional parameter:
-    $filename
+    C<$filename>
         Name of a file to be deleted.
 
 This runs as a test, with a message indicating the temporary file deleted.
 
-=head2 slurp_file($filename)
+=head2 C<slurp_file($filename)>
 
 positional parameter:
-    $filename
+    C<$filename>
         Name of a file whose contents will be read into a string.
 
 returns:
     String containing the entire contents of the chosen file.
 
-=head2 create_empty_file
+=head2 C<create_empty_file>
 
 returns:
     Name for an empty file that has just been created with a random
@@ -113,7 +115,7 @@ returns:
 
 =head1 RATIONALE
 
-    I have been using heredocs in Perl 6 for my tests in a similar way to how I previously used Data::Section in Perl 5 tests. These functions make using heredocs in Perl 5 much more amenable to test situations.
+I have been using heredocs in Perl 6 for my tests in a similar way to how I previously used Data::Section in Perl 5 tests. These functions make using heredocs in Perl 5 much more amenable to test situations.
 
 =head1 DIAGNOSTICS
 

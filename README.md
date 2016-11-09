@@ -4,7 +4,7 @@ Test::HereFiles - Use "embedded" files in the form of heredocs.
 
 # VERSION
 
-version 0.0002
+version 0.0003
 
 # SYNOPSIS
 
@@ -21,37 +21,38 @@ This current implementation absolutely requires that code using this module:
 
 # SUBROUTINES
 
-## create\_filename\_for
+## `create_filename_for($heredoc_name)`
+=head2 `create_filename_for($heredoc_name,$filename)`
 
 positional parameters:
-    $heredoc\_name
+    `$heredoc_name`
         Name of "heredoc" chosen to be written to a temp file.
 
-    $filename (optional)
+    C<$filename>
         String. The name of a file to which $content will be written. If
         not given, a temporary file will be created.
 
 returns:
     Name of the filename containing the "heredoc" text.
 
-## delete\_temp\_file($filename)
+## `delete_temp_file($filename)`
 
 positional parameter:
-    $filename
+    `$filename`
         Name of a file to be deleted.
 
 This runs as a test, with a message indicating the temporary file deleted.
 
-## slurp\_file($filename)
+## `slurp_file($filename)`
 
 positional parameter:
-    $filename
+    `$filename`
         Name of a file whose contents will be read into a string.
 
 returns:
     String containing the entire contents of the chosen file.
 
-## create\_empty\_file
+## `create_empty_file`
 
 returns:
     Name for an empty file that has just been created with a random
@@ -60,7 +61,7 @@ returns:
 
 # RATIONALE
 
-    I have been using heredocs in Perl 6 for my tests in a similar way to how I previously used Data::Section in Perl 5 tests. These functions make using heredocs in Perl 5 much more amenable to test situations.
+I have been using heredocs in Perl 6 for my tests in a similar way to how I previously used Data::Section in Perl 5 tests. These functions make using heredocs in Perl 5 much more amenable to test situations.
 
 # DIAGNOSTICS
 
