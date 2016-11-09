@@ -4,7 +4,7 @@ Test::StringFiles - Embed files in your script and use them programatically.
 
 # VERSION
 
-version 0.0007
+version 0.0009
 
 # SYNOPSIS
 
