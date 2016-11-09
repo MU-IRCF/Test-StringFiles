@@ -233,6 +233,6 @@ Patches are welcome.
 
 =head1 ACKNOWLEDGEMENTS
 
-Thanks to Ricardo SIGNES for L<https://metacpan.org/pod/Data::Section|Data::Section>. C<Test::StringFiles> is built around using heredocs similar to how I've been using C<Data::Section> in tests for many years.
+Thanks to Ricardo SIGNES for L<Data::Section|https://metacpan.org/pod/Data::Section>. C<Test::StringFiles> is built around using heredocs similar to how I've been using C<Data::Section> in tests for many years.
 
 =cut

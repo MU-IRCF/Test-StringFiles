@@ -4,7 +4,7 @@ Test::StringFiles - Embed files in your script and use them programatically.
 
 # VERSION
 
-version 0.0006
+version 0.0007
 
 # SYNOPSIS
 
@@ -157,7 +157,7 @@ Patches are welcome.
 
 # ACKNOWLEDGEMENTS
 
-Thanks to Ricardo SIGNES for [https://metacpan.org/pod/Data::Section|Data::Section](https://metacpan.org/pod/Data::Section|Data::Section). `Test::StringFiles` is built around using heredocs similar to how I've been using `Data::Section` in tests for many years.
+Thanks to Ricardo SIGNES for [Data::Section](https://metacpan.org/pod/Data::Section). `Test::StringFiles` is built around using heredocs similar to how I've been using `Data::Section` in tests for many years.
 
 # AUTHOR
 
