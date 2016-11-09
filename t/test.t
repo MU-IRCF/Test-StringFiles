@@ -67,5 +67,5 @@ END
 );
 # END Heredocs --------------------------------------------
 
-    return %string_for{$section};
+    return $string_for{$section};
 }
